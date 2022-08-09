@@ -2,7 +2,17 @@ const USER_URL = 'https://api.github.com/users';
 
 
 export default async function getUser(username) {
-    const response = await fetch(`${USER_URL}/${username.toLowerCase()}`);
-    const user = await response.json();
-    return user;
+    try {
+        const response = await fetch(`${USER_URL}/${username}`);
+        if (response.ok) {
+            return await response.json();
+        } else {
+            console.log(response.status)
+            return null;
+        }
+    } catch (err) {
+        throw new Error('Something went wrong while getting character');
+    }
+
+
 }
