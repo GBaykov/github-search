@@ -1,12 +1,21 @@
 // import logo from './logo.svg';
 import './App.css';
 import Header from './components/header';
+import NoContent from './components/nocontent';
+import './index.css'
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-    </div>
+      <main className="main"><NoContent /></main>
+    </>
+
+
+
+
+
+
   );
 }
 

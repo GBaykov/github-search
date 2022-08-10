@@ -1,0 +1,45 @@
+.nocontent-wrapper {
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    min-height: 662px;
+}
+
+.nocontent {
+    width: 210px;
+    height: 160px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+@media(max-width:650px) {
+    .nocontent {
+        width: 230px;
+        height: 170px;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-75%) translateX(-50%);
+    }
+}
+
+.imagecontent {}
+
+.imagecontent__img {
+
+    width: 64.17px;
+    height: 64.17px;
+}
+
+.central-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 140%;
+    color: #808080;
+    text-align: center;
+}
