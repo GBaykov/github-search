@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import getUser from "../../cervices/Api";
+import './searchbar.css'
 
 export default function SearchBar() {
     const { register, handleSubmit } = useForm();
@@ -18,8 +19,11 @@ export default function SearchBar() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("searchUser", { minLength: 1 })} />
+        <form className="searchbar" onSubmit={handleSubmit(onSubmit)}>
+            <input type="text" className="searchbar__input"
+                placeholder="Enter GitHub username"
+                {...register("searchUser", { minLength: 1 })} />
+
         </form>
     );
 }
