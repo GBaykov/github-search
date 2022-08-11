@@ -1,6 +1,7 @@
 import React from 'react';
 import './nocontent.css'
 
+
 export default function NoContent({ imageConent = 'search.svg', text = 'Start with searching a GitHub user' }) {
     return (
         <div className="nocontent-wrapper">
