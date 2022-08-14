@@ -1,8 +1,11 @@
 .nocontent-wrapper {
-    display: flex;
+    /* display: flex;
     text-align: center;
     vertical-align: middle;
-    position: relative;
+    position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 662px;
 }
 
@@ -10,10 +13,13 @@
     max-width: 210px;
     max-height: 160px;
     font-family: 'Inter';
-    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%); */
 }
 
 @media(max-width:650px) {

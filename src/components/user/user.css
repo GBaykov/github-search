@@ -1,0 +1,20 @@
+.user-block {
+    width: 293px;
+    height: 432px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user-avatar {}
+
+.user-avatar__img {}
+
+.user-name {}
+
+.user-login {}
+
+.user-popularity {}
+
+.user-followers {}
+
+.user-following {}

@@ -5,9 +5,9 @@ export default async function getUser(username) {
     try {
         const response = await fetch(`${USER_URL}/${username}`);
         if (response.ok) {
-            return await response.json();
+            const user = await response.json();
+            return userToResponce(user);
         } else {
-            console.log(response.status)
             return null;
         }
     } catch (err) {
@@ -15,4 +15,8 @@ export default async function getUser(username) {
     }
 
 
+}
+function userToResponce(user) {
+    const responceUser = { avatar: user.avatar_url, name: user.name, followers: user.followers, followers_url: user.followers_url, following: user.following, following_url: user.following_url, html_url: user.html_url, login: user.login, repos_url: user.repos_url }
+    return responceUser;
 }
