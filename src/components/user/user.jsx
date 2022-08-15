@@ -10,8 +10,14 @@ export default function User({ user }) {
             <p className="user-name">{user.name}</p>
             <p className="user-login">{user.login}</p>
             <div className="user-popularity">
-                <p className="user-followers">{user.followers} followers</p>
-                <p className="user-following">{user.following} following</p>
+                <p className="user-followers">
+                    <img src="/icons/users-ico.svg" width="22px"
+                        height="14px" alt="" />
+                    {user.followers} followers</p>
+                <p className="user-following">
+                    <img src="/icons/person-ico.svg" width="16px"
+                        height="16px" alt="" />
+                    {user.following} following</p>
             </div>
         </section>
     )
