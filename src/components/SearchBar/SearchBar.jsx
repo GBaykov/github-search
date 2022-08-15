@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import getUser from "../../cervices/Api";
+import getUser, { getUserRepos } from "../../cervices/Api";
 import './searchbar.css'
 
 export default function SearchBar({ addUser }) {
@@ -9,17 +9,15 @@ export default function SearchBar({ addUser }) {
         try {
             const user = await getUser(data.searchUser);
             if (user) {
-                console.log('is user')
                 addUser(user);
+                const repos = await getUserRepos(data.searchUser);
+                console.log(repos);
             } else {
-                console.log('user not found');
-                console.log('no user')
                 addUser(null)
             }
         } catch (err) {
-            console.log(err)
+            throw new Error(err.message)
         }
-
     }
 
     return (
