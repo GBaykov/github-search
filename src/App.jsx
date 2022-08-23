@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-import getUser from './cervices/Api';
+import getUser, { getUserRepos } from './cervices/Api';
 import Header from './components/header';
 import './index.css'
 import MainPage from './pages/mainPage/main';
@@ -43,7 +43,9 @@ function App() {
   useEffect(() => {
     if (isComponentMounted) {
       setIsLoading(true);
-      searchUser(userName);
+      addUser(userName);
+
+      addRepos(userName);
       setIsLoading(false);
     }
 
@@ -51,18 +53,26 @@ function App() {
 
 
 
-  const searchUser = async (userName) => {
+  const addUser = async (userName) => {
     try {
       const user = await getUser(userName);
       setUser(user);
+      setReposLenght(user.repos)
       setIsError(false);
     } catch (err) {
       setIsError(true);
     }
   }
 
-  const addRepos = (repos) => {
-    setRepos(repos);
+  const addRepos = async (userName) => {
+    try {
+      const repos = await getUserRepos(userName);
+      setRepos(repos);
+      // setIsError(false);
+    } catch (err) {
+      setIsError(true);
+    }
+
   }
 
   const conent = () => {

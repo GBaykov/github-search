@@ -1,2 +1,2 @@
-import RepoList from './RepoList';
-export default RepoList;
+import ReposList from './ReposList';
+export default ReposList;

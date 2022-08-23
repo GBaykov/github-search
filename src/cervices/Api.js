@@ -39,7 +39,7 @@ export async function getUserRepos(username) {
             return null;
         }
     } catch (err) {
-        throw new Error('Something went wrong while getting character');
+        throw new Error('Something went wrong while getting UserRepos');
     }
 }
 function userReposToResponce(repos) {
