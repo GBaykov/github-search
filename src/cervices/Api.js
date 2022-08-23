@@ -8,14 +8,22 @@ export default async function getUser(username) {
             const user = await response.json();
             return userToResponce(user);
         } else {
-            return null;
+            console.log(response.status);
+            return userToResponce(null);
+            // throw new Error(response.status);
         }
+
     } catch (err) {
         throw new Error('Something went wrong while getting user');
     }
 }
+
 function userToResponce(user) {
-    const responceUser = { avatar: user.avatar_url, name: user.name, followers: user.followers, followers_url: user.followers_url, following: user.following, following_url: user.following_url, html_url: user.html_url, login: user.login, repos_url: user.repos_url }
+    const responceUser = {
+        avatar: user.avatar_url, name: user.name, followers: user.followers,
+        followers_url: user.followers_url, following: user.following, following_url: user.following_url,
+        html_url: user.html_url, login: user.login, repos_url: user.repos_url, repos: user.public_repos
+    }
     return responceUser;
 }
 
