@@ -5,12 +5,12 @@ export default function Repo({ repo }) {
     return (
         <div className="repo">
             <div className="repo__content">
-                <p className="repo__content-title repo-title">
-                    <a href={repo.html_url} className="repo-title__link">
-                        {repo.title}
+                <p className="repo__content-name repo-name">
+                    <a href={repo.url} className="repo-name__url">
+                        {repo.name}
                     </a>
                 </p>
-                <p className="repo__content-text">{repo.text}</p>
+                <p className="repo__content-description">{repo.description}</p>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import Repo from '../repos';
+import Repo from '../repo';
 import './RepoList.css';
 
 export default function ReposList({ repos, reposLenght }) {
@@ -7,17 +7,16 @@ export default function ReposList({ repos, reposLenght }) {
         if (repos) {
             return (
                 repos.map((repo) => {
-                    console.log(repo)
-                    return <Repo repo={repo} />
+                    return <Repo repo={repo} key={repo.name} />
                 })
             )
         }
 
     }
     return (
-        <div className="repo-list">
-            <h2 className="repo-list__quantity">{reposLenght}</h2>
+        <section className="repo-list">
+            <h2 className="repo-list__quantity">Repositories ({reposLenght})</h2>
             {repoList()}
-        </div>
+        </section>
     )
 }

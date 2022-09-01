@@ -1,0 +1,34 @@
+.repo {
+    width: 100%;
+    padding: 24px 32px;
+    background-color: #FFFFFF;
+    font-family: 'Inter';
+    font-style: normal;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+
+.repo__content {}
+
+.repo__content-name {
+    color: #0064EB;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.repo-name {}
+
+.repo-name__url {
+    text-decoration: none;
+    color: #0064EB;
+}
+
+.repo__content-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
+}

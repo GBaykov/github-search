@@ -11,4 +11,4 @@ export default function NoReposPage({ user }) {
             <NoContent imageConent={content.imageConent} text={content.text} />
         </main>
     )
-}
+} 

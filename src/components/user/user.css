@@ -1,19 +1,56 @@
 .user-block {
     width: 293px;
-    height: 432px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.user-avatar {}
+.user-avatar {
+    max-width: 280px;
+    max-height: 280px;
+    margin: 0 0 29px 0;
+}
 
-.user-avatar__img {}
 
-.user-name {}
+.user-avatar__img {
+    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+}
 
-.user-login {}
+.user-info {
+    font-family: 'Inter';
+    font-style: normal;
+    width: 292px;
+}
 
-.user-popularity {}
+.user-name {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 130%;
+}
+
+.user-login {
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.user-login__link {
+    text-decoration: none;
+    color: #0064EB;
+}
+
+.user-popularity {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
 
 .user-followers {}
 

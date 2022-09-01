@@ -1,0 +1,11 @@
+.repo-list {}
+
+.repo-list__quantity {
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    margin-bottom: 29px;
+}

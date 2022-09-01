@@ -8,9 +8,7 @@ export default async function getUser(username) {
             const user = await response.json();
             return userToResponce(user);
         } else {
-            console.log(response.status);
             return userToResponce(null);
-            // throw new Error(response.status);
         }
 
     } catch (err) {
@@ -19,12 +17,11 @@ export default async function getUser(username) {
 }
 
 function userToResponce(user) {
-    const responceUser = {
+    return {
         avatar: user.avatar_url, name: user.name, followers: user.followers,
         followers_url: user.followers_url, following: user.following, following_url: user.following_url,
-        html_url: user.html_url, login: user.login, repos_url: user.repos_url, repos: user.public_repos
-    }
-    return responceUser;
+        url: user.html_url, login: user.login, repos_url: user.repos_url, repos: user.public_repos
+    };
 }
 
 
@@ -46,7 +43,6 @@ function userReposToResponce(repos) {
     const responce = repos.map((repo) => {
         return { name: repo.name, description: repo.description, url: repo.html_url }
     })
-    console.log(responce);
     return responce;
 
 }
