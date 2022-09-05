@@ -1,5 +1,6 @@
 .repo {
     width: 100%;
+    min-height: 112px;
     padding: 24px 32px;
     background-color: #FFFFFF;
     font-family: 'Inter';
@@ -16,6 +17,7 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
+    margin: 0 0 14px 0;
 }
 
 .repo-name {}
@@ -25,10 +27,14 @@
     color: #0064EB;
 }
 
+.repo-name__url:hover {
+    color: #063e87;
+}
+
 .repo__content-description {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-
+    margin: 0;
     color: #000000;
 }

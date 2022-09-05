@@ -7,12 +7,6 @@ import MainPage from './pages/mainPage/main';
 import NoReposPage from './pages/noReposPage';
 import NoUserPage from './pages/noUserPage';
 
-
-// 2-2. допилить отображение осноынх жлементов
-// 3. добавить минимальные(или полные) стили и дальше добавить пэгинацию
-// 4. закончить стили, рефакторинг, реализация остальных мелких фич
-// !!!5. ДОП - переписать на ТС и(или) Редакс
-
 function App() {
   const [userName, setUserName] = useState('');
   const [user, setUser] = useState(null);
@@ -70,7 +64,7 @@ function App() {
 
   }
 
-  const conent = () => {
+  const content = () => {
     if (isError) return <NoUserPage />
     if (user && reposLenght < 1) return <NoReposPage user={user} />
     return (<MainPage
@@ -84,7 +78,7 @@ function App() {
   return (
     <>
       <Header addUserName={addUserName} />
-      {conent()}
+      {content()}
       {/* {isRequest && !user && <NoUserPage />}
       <MainPage isRequest={isRequest} user={user} reposLenght={reposLenght} /> */}
 
