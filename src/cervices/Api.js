@@ -26,9 +26,9 @@ function userToResponce(user) {
 
 
 
-export async function getUserRepos(username) {
+export async function getUserRepos(username, page) {
     try {
-        const response = await fetch(`${USER_URL}/${username}/repos`);
+        const response = await fetch(`${USER_URL}/${username}/repos?per_page=40&page=${page}`);
         if (response.ok) {
             const userRepos = await response.json();
             return userReposToResponce(userRepos);
