@@ -4,11 +4,10 @@ import ReactPaginate from 'react-paginate';
 import { getUserRepos } from '../../cervices/Api';
 import { ACTIONS, AppContext } from '../../reducer';
 import Repo from '../repo';
+import Spinner from '../spinner/spinner';
 
 function Items(repos) {
-  console.log(repos);
-
-  // return <>{repos && repos.map((repo) => <Repo repo={repo} key={repo.name} />)}</>;
+  return <>{repos.repos && repos.repos.map((repo) => <Repo repo={repo} key={repo.name} />)}</>;
 }
 
 export default function PaginatedItems({ itemsPerPage }) {
@@ -56,10 +55,11 @@ export default function PaginatedItems({ itemsPerPage }) {
   const handlePageClick = (event) => {
     console.log(event);
     console.log(event.selected);
-    dispatch({ type: ACTIONS.setCurrentPage, payload: { currentPage: event.selected } });
+    dispatch({ type: ACTIONS.setCurrentPage, payload: { currentPage: event.selected + 1 } });
     // const newOffset = (event.selected * itemsPerPage) % repos.length;
     // setItemOffset(newOffset);
   };
+  if (isLoading) return <Spinner />;
 
   return (
     <>
