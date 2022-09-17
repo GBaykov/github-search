@@ -9,7 +9,7 @@ export default function SearchBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputValue);
+    console.log(inputValue, state);
     dispatch({
       type: ACTIONS.setUserName,
       payload: { userName: inputValue },

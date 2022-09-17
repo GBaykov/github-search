@@ -31,6 +31,7 @@ function userToResponce(user) {
 
 export async function getUserRepos(username, page) {
   try {
+    console.log('getUserRepos', page);
     const response = await fetch(`${USER_URL}/${username}/repos?per_page=4&page=${page}`);
     if (response.ok) {
       const userRepos = await response.json();

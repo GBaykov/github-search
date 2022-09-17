@@ -25,10 +25,16 @@ function App() {
   const addUser = async (userName) => {
     try {
       const user = await getUser(userName);
-      dispatch({
-        type: ACTIONS.setUser,
-        payload: { user },
-      });
+      dispatch(
+        {
+          type: ACTIONS.setUser,
+          payload: { user },
+        },
+        dispatch({
+          type: ACTIONS.setReposLenght,
+          payload: { reposLenght: user.repos },
+        })
+      );
       // setReposLenght(user.repos);
       setIsError(false);
     } catch (err) {
