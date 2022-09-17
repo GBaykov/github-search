@@ -1,2 +1,2 @@
-import NoReposPage from "./noReposPage";
+import NoReposPage from './noReposPage';
 export default NoReposPage;

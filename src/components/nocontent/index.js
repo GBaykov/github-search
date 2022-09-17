@@ -1,2 +1,2 @@
-import NoContent from "./nocontent";
+import NoContent from './nocontent';
 export default NoContent;

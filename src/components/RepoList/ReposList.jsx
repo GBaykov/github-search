@@ -58,14 +58,9 @@ export default function ReposList({ username, reposLenght }) {
   // }
   return (
     <section className="repo-list">
-      <h2 className="repo-list__quantity">
-        Repositories (
-        {reposLenght}
-        )
-      </h2>
+      <h2 className="repo-list__quantity">Repositories ({reposLenght})</h2>
       {/* {repoList()} */}
       <PaginatedItems repos={repos} itemsPerPage={4} />
-
     </section>
   );
 }

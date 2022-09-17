@@ -1,2 +1,2 @@
-import PaginatedItems from "./paginate";
+import PaginatedItems from './paginate';
 export default PaginatedItems;

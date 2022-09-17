@@ -1,16 +1,15 @@
 .main {
-    padding: 28px 56px;
+  padding: 28px 56px;
 }
 
 .user-page {
-    display: flex;
-
+  display: flex;
 }
 
 .user-page section:not(:last-child) {
-    margin-right: 85px;
+  margin-right: 85px;
 
-    /*
+  /*
       тут блок свойств общих для всех li
       кроме первого и последнего
   */
