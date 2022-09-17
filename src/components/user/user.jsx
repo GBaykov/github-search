@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../reducer';
 import './user.css';
 
-export default function User({ user }) {
+export default function User() {
+  const { state, dispatch } = useContext(AppContext);
+  const { user } = state;
   return (
     <section className="user-block">
       <p className="user-avatar">

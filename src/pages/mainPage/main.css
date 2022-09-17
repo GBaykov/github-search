@@ -1,5 +1,7 @@
 .main {
   padding: 28px 56px;
+  display: flex;
+  margin: 0 auto;
 }
 
 .user-page {
@@ -8,9 +10,4 @@
 
 .user-page section:not(:last-child) {
   margin-right: 85px;
-
-  /*
-      тут блок свойств общих для всех li
-      кроме первого и последнего
-  */
 }

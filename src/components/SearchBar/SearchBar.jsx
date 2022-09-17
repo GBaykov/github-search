@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ACTIONS, AppContext } from '../../reducer';
 // import { useForm } from "react-hook-form";
 import './searchbar.css';
@@ -6,7 +6,6 @@ import './searchbar.css';
 export default function SearchBar() {
   const [inputValue, setInputValue] = useState('');
   const { state, dispatch } = useContext(AppContext);
-  // const { register, handleSubmit } = useForm();
 
   const handleSubmit = (e) => {
     e.preventDefault();

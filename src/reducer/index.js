@@ -13,6 +13,7 @@ export const ACTIONS = {
   setUser: 'setUser',
   setRepos: 'setRepos',
   setCurrentPage: 'setCurrentPage',
+  setReposLenght: 'setReposLenght',
 };
 
 export function reducer(state, action) {
@@ -25,6 +26,8 @@ export function reducer(state, action) {
       return { ...state, repos: action.payload.repos };
     case ACTIONS.setCurrentPage:
       return { ...state, currentPage: action.payload.currentPage };
+    case ACTIONS.setReposLenght:
+      return { ...state, reposLenght: action.payload.reposLenght };
     default:
       return initialState;
   }

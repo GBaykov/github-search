@@ -7,9 +7,8 @@ import './index.css';
 import MainPage from './pages/mainPage/main';
 import NoReposPage from './pages/noReposPage';
 import NoUserPage from './pages/noUserPage';
-import { reducer, defaultState, AppContext } from './reducer';
-
-// export useComponentDidMount;
+import { reducer, defaultState, AppContext, ACTIONS } from './reducer';
+import Spinner from './components/spinner/spinner';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, defaultState);
@@ -18,24 +17,19 @@ function App() {
     return { state, dispatch };
   }, [state, dispatch]);
 
-  // const [userName, setUserName] = useState('');
-  // const [user, setUser] = useState(null);
-  // const [repos, setRepos] = useState([]);
-  // const [reposLenght, setReposLenght] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
   const isComponentMounted = hooks.useComponentDidMount();
 
-  // const addUserName = (userName) => {
-  //   setUserName(userName);
-  // };
-
   const addUser = async (userName) => {
     try {
       const user = await getUser(userName);
-      setUser(user);
-      setReposLenght(user.repos);
+      dispatch({
+        type: ACTIONS.setUser,
+        payload: { user },
+      });
+      // setReposLenght(user.repos);
       setIsError(false);
     } catch (err) {
       setIsError(true);
@@ -45,31 +39,22 @@ function App() {
   useEffect(() => {
     if (isComponentMounted) {
       setIsLoading(true);
-      // addUser(userName);
+      addUser(state.userName);
       setIsLoading(false);
     }
   }, [state.userName, isComponentMounted]);
 
   const content = () => {
+    if (isLoading) return <Spinner />;
     if (isError) return <NoUserPage />;
-    if (user && reposLenght < 1) return <NoReposPage />;
-    // user={user}
-    return (
-      <MainPage
-      // user={user}
-      // repos={repos}
-      // reposLenght={reposLenght}
-      />
-    );
+    if (state.user && state.reposLenght < 1) return <NoReposPage user={state.user} />;
+    return <MainPage />;
   };
 
   return (
     <AppContext.Provider value={contextValue}>
       <Header />
-      {/* addUserName={addUserName} */}
       {content()}
-      {/* {isRequest && !user && <NoUserPage />}
-      <MainPage isRequest={isRequest} user={user} reposLenght={reposLenght} /> */}
     </AppContext.Provider>
   );
 }
