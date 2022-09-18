@@ -1,0 +1,38 @@
+.nocontent-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 662px;
+  flex-grow: 1;
+}
+
+.nocontent {
+  max-width: 210px;
+  max-height: 160px;
+  font-family: 'Inter';
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 650px) {
+  .nocontent {
+    max-width: 230px;
+    max-height: 170px;
+  }
+}
+
+.imagecontent__img {
+  width: 64.17px;
+  height: 64.17px;
+}
+
+.central-text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 140%;
+  color: #808080;
+  text-align: center;
+}

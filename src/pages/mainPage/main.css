@@ -1,0 +1,31 @@
+.main {
+  padding: 28px 56px;
+  display: flex;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .main {
+    padding: 18px 26px;
+  }
+}
+
+.user-page {
+  display: flex;
+}
+@media (max-width: 850px) {
+  .user-page {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.user-page section:not(:last-child) {
+  margin-right: 85px;
+}
+
+@media (max-width: 850px) {
+  .user-page section:not(:last-child) {
+    margin-bottom: 35px;
+    margin-right: 15px;
+  }
+}

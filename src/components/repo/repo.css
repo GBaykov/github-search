@@ -1,0 +1,49 @@
+.repo {
+  width: 100%;
+  height: 112px;
+  padding: 24px 32px;
+  background-color: #ffffff;
+  font-family: 'Inter';
+  font-style: normal;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+@media (max-width: 1070px) {
+  .repo {
+    height: 142px;
+    padding: 18px 24px;
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 435px) {
+  .repo {
+    height: 162px;
+    padding: 12px 18px;
+  }
+}
+
+.repo__content-name {
+  color: #0064eb;
+
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0 0 14px 0;
+}
+
+.repo-name__url {
+  text-decoration: none;
+  color: #0064eb;
+}
+
+.repo-name__url:hover {
+  color: #063e87;
+}
+
+.repo__content-description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 0;
+  color: #000000;
+}
