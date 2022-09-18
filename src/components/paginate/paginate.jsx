@@ -5,6 +5,7 @@ import { getUserRepos } from '../../cervices/Api';
 import { ACTIONS, AppContext } from '../../reducer';
 import Repo from '../repo';
 import Spinner from '../spinner/spinner';
+import './paginate.css';
 
 function Items(repos) {
   return <>{repos.repos && repos.repos.map((repo) => <Repo repo={repo} key={repo.name} />)}</>;
@@ -23,20 +24,20 @@ export default function PaginatedItems({ itemsPerPage }) {
   // const isComponentMounted = hooks.useComponentDidMount();
 
   async function addRepos(userName, currentPage) {
-    setIsLoading(true);
     try {
+      setIsLoading(true);
       const repos = await getUserRepos(userName, currentPage);
-      console.log(repos, 'repos in addRepos in Paginate');
       dispatch({ type: ACTIONS.setRepos, payload: { repos } });
+      setIsLoading(false);
       setIsError(false);
     } catch (err) {
+      setIsLoading(false);
       setIsError(true);
     }
   }
   useEffect(() => {
     addRepos(state.userName, state.currentPage);
     setPageCount(Math.ceil(state.reposLenght / itemsPerPage));
-    setIsLoading(false);
   }, [state.userName, state.currentPage]);
 
   useEffect(() => {
@@ -70,7 +71,7 @@ export default function PaginatedItems({ itemsPerPage }) {
     // const newOffset = (event.selected * itemsPerPage) % repos.length;
     // setItemOffset(newOffset);
   };
-  if (isLoading) return <Spinner />;
+  const load = isLoading ? <Spinner /> : <Items repos={state.repos} />;
 
   function pageCountSet() {
     return (
@@ -82,22 +83,32 @@ export default function PaginatedItems({ itemsPerPage }) {
 
   return (
     <>
-      <Items repos={state.repos} />
+      {load}
       <div className="paginate-count">
         {pageCountSet()}
         <ReactPaginate
           breakLabel="..."
           // breakClassName="break-item"
           // breakLinkClassName="break-link"
-          nextLabel=" next >"
+          nextLabel=" >"
           onPageChange={handlePageClick}
           pageRangeDisplayed={2}
           marginPagesDisplayed={1}
           pageCount={pageCount}
-          previousLabel="< previous "
+          previousLabel="< "
           renderOnZeroPageCount={null}
           className="pagination"
           activeClassName="active-page"
+          activeLinkClassName="active-link"
+          pageClassName="page-item"
+          pageLinkClassName="page-link"
+          previousClassName="page-item previous-item"
+          previousLinkClassName="page-link"
+          nextClassName="page-item next-item"
+          nextLinkClassName="page-link"
+          breakClassName="page-item"
+          breakLinkClassName="page-link"
+          containerClassName="pagination"
         />
       </div>
     </>

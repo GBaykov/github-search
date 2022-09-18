@@ -17,7 +17,7 @@
   left: 31px;
   border-radius: 50%;
   border: 10px solid #000;
-  border-color: #b56d7b transparent #b56d7b transparent;
+  border-color: #7d6db5 transparent #6f6db5 transparent;
   animation: ldio-03tjcleqsehl 1s linear infinite;
 }
 .ldio-03tjcleqsehl > div:nth-child(2) {
@@ -38,14 +38,14 @@
   height: 10px;
   top: -10px;
   left: 54px;
-  background: #b56d7b;
+  background: #6d6fb5;
   border-radius: 50%;
-  box-shadow: 0 128px 0 0 #b56d7b;
+  box-shadow: 0 128px 0 0 #6d72b5;
 }
 .ldio-03tjcleqsehl > div:nth-child(2) div:after {
   left: -10px;
   top: 54px;
-  box-shadow: 128px 0 0 0 #b56d7b;
+  box-shadow: 128px 0 0 0 #776db5;
 }
 .loadingio-spinner-dual-ring-fbc1fubm9n {
   margin-left: calc(39%);
@@ -53,7 +53,7 @@
   height: 200px;
   display: inline-block;
   overflow: hidden;
-  background: #ffffff;
+  background: #f9f9f9;
 }
 .ldio-03tjcleqsehl {
   width: 100%;

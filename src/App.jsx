@@ -24,6 +24,7 @@ function App() {
 
   const addUser = async (userName) => {
     try {
+      setIsLoading(true);
       const user = await getUser(userName);
       dispatch(
         {
@@ -36,31 +37,30 @@ function App() {
         })
       );
       // setReposLenght(user.repos);
+      setIsLoading(false);
       setIsError(false);
     } catch (err) {
+      setIsLoading(false);
       setIsError(true);
     }
   };
 
   useEffect(() => {
     if (isComponentMounted) {
-      setIsLoading(true);
       addUser(state.userName);
-      setIsLoading(false);
     }
   }, [state.userName, isComponentMounted]);
 
   const content = () => {
-    if (isLoading) return <Spinner />;
     if (isError) return <NoUserPage />;
     if (state.user && state.reposLenght < 1) return <NoReposPage user={state.user} />;
     return <MainPage />;
   };
-
+  const load = isLoading ? <Spinner /> : content();
   return (
     <AppContext.Provider value={contextValue}>
       <Header />
-      {content()}
+      {load}
     </AppContext.Provider>
   );
 }
