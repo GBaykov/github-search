@@ -1,9 +1,25 @@
 .repo-list {
-  width: 877px;
+  min-height: 877px;
+  max-width: 877px;
 }
 @media (max-width: 1330px) {
   .repo-list {
-    max-width: 877px;
+    max-width: 667px;
+  }
+}
+@media (max-width: 1120px) {
+  .repo-list {
+    max-width: 567px;
+  }
+}
+@media (max-width: 440px) {
+  .repo-list {
+    max-width: 367px;
+  }
+}
+@media (max-width: 390px) {
+  .repo-list {
+    max-width: 307px;
   }
 }
 

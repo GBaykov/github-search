@@ -8,10 +8,18 @@
   margin-bottom: 24px;
   box-sizing: border-box;
 }
-@media (max-width: 1330px) {
+@media (max-width: 1070px) {
+  .repo {
+    height: 142px;
+    padding: 18px 24px;
+    margin-bottom: 16px;
+  }
 }
-
-.repo__content {
+@media (max-width: 435px) {
+  .repo {
+    height: 162px;
+    padding: 12px 18px;
+  }
 }
 
 .repo__content-name {
@@ -21,9 +29,6 @@
   font-size: 24px;
   line-height: 29px;
   margin: 0 0 14px 0;
-}
-
-.repo-name {
 }
 
 .repo-name__url {

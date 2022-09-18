@@ -11,17 +11,33 @@
   max-height: 280px;
   margin: 0 0 29px 0;
 }
-
 .user-avatar__img {
   border-radius: 50%;
   width: 280px;
   height: 280px;
 }
-
 .user-info {
   font-family: 'Inter';
   font-style: normal;
   width: 292px;
+}
+@media (max-width: 900px) {
+  .user-avatar__img {
+    width: 240px;
+    height: 240px;
+  }
+  .user-avatar {
+    max-width: 240px;
+    max-height: 240px;
+    margin: 0 0 29px 0;
+  }
+  .user-block {
+    width: 243px;
+  }
+
+  .user-info {
+    width: 242px;
+  }
 }
 
 .user-name {
@@ -45,14 +61,27 @@
 
 .user-popularity {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 40px 0 0 0;
 }
+@media (max-width: 800px) {
+  .user-popularity {
+    flex-direction: column;
+    margin: 25px 0 0 0;
+  }
+  .user-followers {
+    margin-bottom: 20px;
+  }
+}
 
 .user-followers {
   margin: 0px;
+}
+@media (max-width: 800px) {
+  .user-followers {
+    margin-bottom: 15px;
+  }
 }
 
 .user-following {
