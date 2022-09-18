@@ -13,15 +13,12 @@ function Items(repos) {
 
 export default function PaginatedItems({ itemsPerPage }) {
   const [pageCount, setPageCount] = useState(0);
-  // const [itemOffset, setItemOffset] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [endOfSet, setEndOfSet] = useState(0);
   const [beginOfSet, setBeginOfSet] = useState(0);
 
   const { state, dispatch } = useContext(AppContext);
-
-  // const isComponentMounted = hooks.useComponentDidMount();
 
   async function addRepos(userName, currentPage) {
     try {
@@ -43,33 +40,13 @@ export default function PaginatedItems({ itemsPerPage }) {
   useEffect(() => {
     setBeginOfSet(state.currentPage * itemsPerPage - 3);
     const remnant = (state.currentPage * itemsPerPage) % state.reposLenght;
-    console.log(remnant);
     const endOfS =
       remnant >= 4 ? state.currentPage * itemsPerPage : state.currentPage * itemsPerPage - remnant;
     setEndOfSet(endOfS);
   }, [state.userName, state.currentPage, state.user, state.repos]);
 
-  // useEffect(() => {
-  //   if (isComponentMounted) {
-  //     setIsLoading(true);
-  //     addRepos(state.userName, state.currentPage);
-  //     setPageCount(Math.ceil(state.reposLenght / itemsPerPage));
-  //     setIsLoading(false);
-  //   }
-  // }, [state.userName, state.currentPage, isComponentMounted]);
-
-  // useEffect(() => {
-  //   const endOffset = itemOffset + itemsPerPage;
-  //   setCurrentRepos(repos.slice(itemOffset, endOffset));
-  //   setPageCount(Math.ceil(repos.length / itemsPerPage));
-  // }, [itemOffset, itemsPerPage, repos, pageCount]);
-
   const handlePageClick = (event) => {
-    console.log(event);
-    console.log(event.selected);
     dispatch({ type: ACTIONS.setCurrentPage, payload: { currentPage: event.selected + 1 } });
-    // const newOffset = (event.selected * itemsPerPage) % repos.length;
-    // setItemOffset(newOffset);
   };
   const load = isLoading ? <Spinner /> : <Items repos={state.repos} />;
 
@@ -88,8 +65,6 @@ export default function PaginatedItems({ itemsPerPage }) {
         {pageCountSet()}
         <ReactPaginate
           breakLabel="..."
-          // breakClassName="break-item"
-          // breakLinkClassName="break-link"
           nextLabel=" >"
           onPageChange={handlePageClick}
           pageRangeDisplayed={2}

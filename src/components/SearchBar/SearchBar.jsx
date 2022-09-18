@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { ACTIONS, AppContext } from '../../reducer';
-// import { useForm } from "react-hook-form";
 import './searchbar.css';
 
 export default function SearchBar() {
@@ -9,7 +8,6 @@ export default function SearchBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputValue, state);
     dispatch({
       type: ACTIONS.setUserName,
       payload: { userName: inputValue },

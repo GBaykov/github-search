@@ -1,18 +1,15 @@
 .header {
-    box-sizing: border-box;
-    height: 72px;
-    background-color: #0064EB;
-    padding: 16px 41px;
+  box-sizing: border-box;
+  height: 72px;
+  background-color: #0064eb;
+  padding: 16px 41px;
 }
 
 .header__content {
-    display: flex;
-    /* flex-wrap: wrap; */
-    align-items: center;
-    /* width: 500px;
-    height: 40px; */
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-    margin: 0px 22px 0px 0px;
+  margin: 0px 22px 0px 0px;
 }

@@ -10,7 +10,6 @@ function Header() {
           <img src="logo.svg" alt="logo imag" className="logo__img" />
         </p>
         <SearchBar />
-        {/* addUserName={addUserName} */}
       </div>
     </header>
   );

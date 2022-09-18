@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useReducer, useMemo } from 'react';
 import './App.css';
-import getUser, { getUserRepos } from './cervices/Api';
+import getUser from './cervices/Api';
 import hooks from './hooks';
 import Header from './components/header';
 import './index.css';
@@ -36,7 +36,6 @@ function App() {
           payload: { reposLenght: user.repos },
         })
       );
-      // setReposLenght(user.repos);
       setIsLoading(false);
       setIsError(false);
     } catch (err) {
