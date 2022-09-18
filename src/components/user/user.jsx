@@ -20,11 +20,11 @@ export default function User() {
         <div className="user-popularity">
           <p className="user-followers">
             <img src="/icons/users-ico.svg" width="22px" height="14px" alt="" />
-            {user.followers} followers
+            {user.followers}followers
           </p>
           <p className="user-following">
             <img src="/icons/person-ico.svg" width="16px" height="16px" alt="" />
-            {user.following} following
+            {user.following}following
           </p>
         </div>
       </div>

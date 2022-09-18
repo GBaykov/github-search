@@ -70,7 +70,7 @@ export default function PaginatedItems({ itemsPerPage }) {
         // breakLinkClassName="break-link"
         nextLabel=" next >"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={0}
+        pageRangeDisplayed={2}
         marginPagesDisplayed={1}
         pageCount={pageCount}
         previousLabel="< previous "
